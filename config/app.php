@@ -122,5 +122,6 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
-
+    App\Providers\FortifyServiceProvider::class,
+App\Providers\JetstreamServiceProvider::class,  
 ];
