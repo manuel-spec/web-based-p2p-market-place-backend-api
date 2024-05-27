@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class authController extends Controller
 {
     public function register(Request $request)
-{
+    {
     $data = $request->validate([
         'name' => 'required|string',
         'email' => 'required|email|unique:users,email', // Adding unique validation for email
@@ -34,8 +34,8 @@ class authController extends Controller
         'user' => $user,
         'access_token' => $token,
     ], 201); // 201 Created status
-}
+    }
 
 
-   
+    
 }
