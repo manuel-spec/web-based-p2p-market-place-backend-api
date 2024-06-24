@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('description');
             $table->decimal('price', 8, 2);
             $table->string('image');
+            $table->string('category');
             $table->string('status')->default("in progress");
             $table->foreignId('user_id')->constrained('users');
         });

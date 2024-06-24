@@ -39,6 +39,7 @@ class ProductController extends Controller
             'image' => ['required', 'image'],
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
+            'category' => 'required|string',
             'price' => ['required', 'numeric', 'min:0'],
         ], [
             'image.required' => 'The image is required.',
@@ -62,6 +63,7 @@ class ProductController extends Controller
             $user = auth()->user();
             $product = new Product([
                 'image' => $imageName,
+                'category' => $validatedData['category'],
                 'user_id' => $user->id,
                 'title' => $validatedData['title'],
                 'description' => $validatedData['description'],
