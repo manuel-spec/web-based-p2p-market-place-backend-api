@@ -16,9 +16,12 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        
+        $products = Product::where('status', 'done')->get();
+        // $products = Product::all();
         return response()->json($products);
     }
+   
 
     /**
      * Show the form for creating a new resource.

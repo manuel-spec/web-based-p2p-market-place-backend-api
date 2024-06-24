@@ -19,7 +19,7 @@ return new class extends Migration
             $table->decimal('price', 8, 2);
             $table->string('image');
             $table->string('category');
-            $table->string('status')->default("in progress");
+            $table->string('status')->default("in_progress");
             $table->foreignId('user_id')->constrained('users');
         });
     }
