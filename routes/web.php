@@ -22,5 +22,6 @@ Route::prefix('api')->group(function() {
         Route::apiResource('products', ProductController::class);
 
     });
+    Route::post('products/{id}/delete', [ProductController::class, 'destroy']);
     Route::get('/images/{filename}', [ImageController::class, 'show'])->name('image.show');
 });
