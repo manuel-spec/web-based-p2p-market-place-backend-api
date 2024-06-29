@@ -26,4 +26,13 @@ class allController extends Controller
         
         return response()->json(['message' => 'Product status updated successfully.']);
     }
+    public function mine(Request $request, $id)
+    {
+        $product = Product::where('user_id', $id)->get();
+        if (!$product) {
+            return response()->json(['message' => 'no product found.'], 404);
+        }
+        
+        return response()->json(['message' => $product]);
+    }
 }

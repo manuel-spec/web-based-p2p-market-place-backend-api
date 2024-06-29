@@ -10,14 +10,14 @@ use App\Http\Controllers\UserController;
 Route::prefix('api')->group(function() {
     Route::prefix('auth')->group(function () {
         Route::post('register', [authController::class, 'register']);
-        Route::post('login', [authController::class, 'update']);
+        Route::post('login', [authController::class, 'login']);
     });
     
     Route::middleware('auth:sanctum')->group(function () {
         Route::put('users/{id}/update', [UserController::class, 'update']);
         Route::get('products/all', [allController::class, 'index']);
         Route::put('products/{id}/status', [allController::class, 'updateStatus']);
-        
+        Route::get('products/mine/{id}', [allController::class, 'mine']);
         
         Route::apiResource('products', ProductController::class);
 
